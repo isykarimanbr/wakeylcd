@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 54.45,
+      "left": -15.6,
+      "attrs": { "env": "micropython-20231227-v1.22.0" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -89.6,
+      "left": -90.4,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": 157.6,
+      "left": -104.5,
+      "attrs": { "common": "cathode" }
+    }
+  ],
+  "connections": [
+    [ "lcd1:SDA", "pico:GP0", "green", [ "h0" ] ],
+    [ "lcd1:SCL", "pico:GP1", "green", [ "h0" ] ],
+    [ "lcd1:VCC", "pico:3V3", "red", [ "h0" ] ],
+    [ "lcd1:GND", "pico:GND.5", "black", [ "h0" ] ],
+    [ "rgb1:R", "pico:GP15", "green", [ "v0" ] ],
+    [ "rgb1:G", "pico:GP14", "green", [ "v0" ] ],
+    [ "rgb1:B", "pico:GP13", "green", [ "v0" ] ],
+    [ "rgb1:COM", "pico:GND.4", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
